@@ -1,0 +1,18 @@
+{% extends 'afectado/base.html' %}
+{% block content %}
+<h1>Agregar Afectado</h1>
+<form role="form" method="POST" class="post-form">{% csrf_token %}
+
+{% for campo in form %}
+<div class="form-group col-xs-6">
+{{ campo.errors }}
+{{ campo.label_tag }} <br>
+{{ campo }}
+</div>
+{% endfor %}
+<div class="form-group col-xs-6">
+<br><br>
+	<button type="submit" class="save btn btn-primary">Guardar</button>
+</div>
+</form>
+{% endblock content %}
